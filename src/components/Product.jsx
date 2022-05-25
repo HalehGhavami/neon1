@@ -27,7 +27,9 @@ export default class Product extends Component {
           -
         </button>
         <button
-          onClick={this.handleDelete}
+          onClick={() => {
+            this.handleDelete(55);
+          }}
           className="m-2 btn btn-sm btn-danger"
         >
           Delete
@@ -46,8 +48,8 @@ export default class Product extends Component {
     console.log('Decrement');
   }
 
-  handleDelete() {
-    console.log('Delete');
+  handleDelete(itemNumber) {
+    console.log(itemNumber);
   }
 
   format() {
