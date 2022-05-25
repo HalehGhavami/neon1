@@ -1,8 +1,9 @@
 import { Component } from 'react';
 
 export default class Product extends Component {
+  count = 5;
   render() {
-    const count = 0;
+    // const count = 0;
     const list = ['Item one ', 'Item two', 'Item three'];
     //map method for converting an array of strings to an array of element
     const listmap = list.map((item, index) => <li key={index}>{item}</li>);
