@@ -17,7 +17,11 @@ export default class Product extends Component {
         <button className="m-2 btn btn-sm btn-warning">-</button>
         <button className="m-2 btn btn-sm btn-danger">Delete</button>
         <ul>{listmap}</ul>
-        <img src={this.imageUrl} alt="random foto" />
+        <img
+          src={this.imageUrl}
+          style={{ borderRadius: '50%' }}
+          alt="random foto"
+        />
       </>
     );
   }
