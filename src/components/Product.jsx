@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import './product.css';
 
 export default class Product extends Component {
   //adding count attribute for be able using it anywhere in our class
@@ -17,11 +18,7 @@ export default class Product extends Component {
         <button className="m-2 btn btn-sm btn-warning">-</button>
         <button className="m-2 btn btn-sm btn-danger">Delete</button>
         <ul>{listmap}</ul>
-        <img
-          src={this.imageUrl}
-          style={{ borderRadius: '50%' }}
-          alt="random foto"
-        />
+        <img src={this.imageUrl} alt="random foto" />
       </>
     );
   }
