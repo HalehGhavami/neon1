@@ -5,7 +5,7 @@ export default class Product extends Component {
     // const count = 2;
     const list = ['Item one ', 'Item two', 'Item three'];
     //map method for converting an array of strings to an array of element
-    const listmap = list.map((item) => <li>item</li>);
+    const listmap = list.map((item) => <li>{item}</li>);
     return (
       <>
         <span className="m-2 text-info">Product Name</span>
