@@ -47,8 +47,10 @@ export default class Product extends Component {
   }
 
   handleIncrement = () => {
-    //never change state directly !!
-    this.state.count += 1;
+    //never change state directly !! use setState that is a method, inheritated from Component
+    this.setState({
+      count: this.state.count + 1,
+    });
   };
 
   handleDecrement = () => {
