@@ -47,7 +47,11 @@ export default class Product extends Component {
   }
 
   handleIncrement = () => {
-    const count = this.state.count;
+    // const count = this.state.count;
+
+    //object Destructuring
+    const { count } = this.state;
+
     //never change state directly !! use setState that is a method, inheritated from Component
     this.setState({
       count: count + 1,
@@ -55,7 +59,11 @@ export default class Product extends Component {
   };
 
   handleDecrement = () => {
-    console.log('Decrement');
+    const { count } = this.state;
+
+    this.setState({
+      count: count - 1,
+    });
   };
 
   handleDelete = (itemNumber) => {
