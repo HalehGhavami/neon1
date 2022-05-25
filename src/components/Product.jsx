@@ -10,7 +10,7 @@ export default class Product extends Component {
     return (
       <>
         <span className="m-2 text-info">Product Name</span>
-        <span className="m-2 badge bg-primary">{this.format(count)}</span>
+        <span className="m-2 badge bg-primary">{this.format(this.count)}</span>
         <button className="m-2 btn btn-sm btn-success">+</button>
         <button className="m-2 btn btn-sm btn-warning">-</button>
         <button className="m-2 btn btn-sm btn-danger">Delete</button>
