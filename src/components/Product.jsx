@@ -11,7 +11,9 @@ export default class Product extends Component {
     return (
       <>
         <span className="m-2 text-info">Product Name</span>
-        <span className="m-2 badge bg-primary">{this.format()}</span>
+        <span className="m-2 badge bg-primary">
+          {this.count === 0 ? 'zero' : this.count}
+        </span>
         <button className="m-2 btn btn-sm btn-success">+</button>
         <button className="m-2 btn btn-sm btn-warning">-</button>
         <button className="m-2 btn btn-sm btn-danger">Delete</button>
@@ -19,11 +21,11 @@ export default class Product extends Component {
       </>
     );
   }
-  format() {
-    if (this.count === 0) {
-      return 'zero';
-    } else {
-      return this.count;
-    }
-  }
+  //   format() {
+  //     if (this.count === 0) {
+  //       return 'zero';
+  //     } else {
+  //       return this.count;
+  //     }
+  //   }
 }
