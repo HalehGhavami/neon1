@@ -2,14 +2,14 @@ import { Component } from 'react';
 
 export default class Product extends Component {
   render() {
-    // const count = 2;
+    const count = 0;
     const list = ['Item one ', 'Item two', 'Item three'];
     //map method for converting an array of strings to an array of element
     const listmap = list.map((item, index) => <li key={index}>{item}</li>);
     return (
       <>
         <span className="m-2 text-info">Product Name</span>
-        <span className="m-2 badge bg-primary">{this.format()}</span>
+        <span className="m-2 badge bg-primary">{this.format(count)}</span>
         <button className="m-2 btn btn-sm btn-success">+</button>
         <button className="m-2 btn btn-sm btn-warning">-</button>
         <button className="m-2 btn btn-sm btn-danger">Delete</button>
@@ -17,7 +17,11 @@ export default class Product extends Component {
       </>
     );
   }
-  format() {
-    return 2 + 2;
+  format(count) {
+    if (count === 0) {
+      return 'zero';
+    } else {
+      return count;
+    }
   }
 }
