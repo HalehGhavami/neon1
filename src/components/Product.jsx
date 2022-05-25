@@ -39,7 +39,7 @@ export default class Product extends Component {
   }
 
   handleIncrement() {
-    console.log('Increment');
+    console.log('Increment', this);
   }
 
   handleDecrement() {
