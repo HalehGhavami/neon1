@@ -5,8 +5,6 @@ export default class Product extends Component {
   //adding state attribute to change our stateless component to stateful component
   state = {
     count: 5,
-    imageUrl: 'https://picsum.photos/200',
-    productName: 'laptop',
   };
 
   //adding count attribute for be able using it anywhere in our class
@@ -18,7 +16,7 @@ export default class Product extends Component {
     const listmap = list.map((item, index) => <li key={index}>{item}</li>);
     return (
       <>
-        <span className="m-2 text-info">{this.state.productName}</span>
+        <span className="m-2 text-info">Product Name</span>
         <span className="m-2 badge bg-primary">{this.format()}</span>
         <button
           onClick={this.handleIncrement}
