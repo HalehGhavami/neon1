@@ -14,14 +14,42 @@ export default class Product extends Component {
       <>
         <span className="m-2 text-info">Product Name</span>
         <span className="m-2 badge bg-primary">{this.format()}</span>
-        <button className="m-2 btn btn-sm btn-success">+</button>
-        <button className="m-2 btn btn-sm btn-warning">-</button>
-        <button className="m-2 btn btn-sm btn-danger">Delete</button>
+        <button
+          onClick={this.handleIncrement}
+          className="m-2 btn btn-sm btn-success"
+        >
+          +
+        </button>
+        <button
+          onClick={this.handleDecrement}
+          className="m-2 btn btn-sm btn-warning"
+        >
+          -
+        </button>
+        <button
+          onClick={this.handleDelete}
+          className="m-2 btn btn-sm btn-danger"
+        >
+          Delete
+        </button>
         <ul>{listmap}</ul>
         <img src={this.imageUrl} alt="random foto" />
       </>
     );
   }
+
+  handleIncrement() {
+    console.log('Increment');
+  }
+
+  handleDecrement() {
+    console.log('Decrement');
+  }
+
+  handleDelete() {
+    console.log('Delete');
+  }
+
   format() {
     if (this.count === 0) {
       return 'zero';
