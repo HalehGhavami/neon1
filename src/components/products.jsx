@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Product from './product';
 
 export default class Products extends Component {
   state = {
@@ -21,6 +22,17 @@ export default class Products extends Component {
     ],
   };
   render() {
-    return <></>;
+    return (
+      <>
+        {this.state.products.map((product, index) => (
+          <Product
+            key={index}
+            productName={product.productName}
+            //sending count as props
+            count={product.count}
+          />
+        ))}
+      </>
+    );
   }
 }
