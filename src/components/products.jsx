@@ -49,6 +49,10 @@ export default class Products extends Component {
   };
 
   handleReset = () => {
-    console.log('Reset');
+    const newProducts = this.state.products.map((product) => {
+      product.count = 0;
+      return product;
+    });
+    this.setState({ products: newProducts });
   };
 }
