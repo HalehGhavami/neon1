@@ -24,7 +24,9 @@ export default class Products extends Component {
   render() {
     return (
       <>
-        <button className="btn btn-primary">Reset</button>
+        <button className="btn btn-primary" onClick={this.handleReset}>
+          Reset
+        </button>
         {this.state.products.map((product, index) => (
           <Product
             key={index}
@@ -44,5 +46,9 @@ export default class Products extends Component {
       (product) => product.id !== productId
     );
     this.setState({ products: newProducts });
+  };
+
+  handleReset = () => {
+    console.log('Reset');
   };
 }
