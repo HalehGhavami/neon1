@@ -39,6 +39,6 @@ export default class Products extends Component {
     );
   }
   handelDelete = (productId) => {
-    console.log('productId');
+    console.log(productId);
   };
 }
