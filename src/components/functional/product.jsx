@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Product = ({ productName, count: propCount, children }) => {
+const Product = ({ productName, count: propCount, onDelete, id }) => {
   const [count, setCount] = useState(propCount);
   return (
     <div>
@@ -21,7 +21,6 @@ const Product = ({ productName, count: propCount, children }) => {
       >
         Delete
       </button>
-      {children}
     </div>
   );
 
@@ -34,7 +33,7 @@ const Product = ({ productName, count: propCount, children }) => {
   }
 
   function handleDelete() {
-    console.log('Delete');
+    onDelete(id);
   }
 
   function format() {

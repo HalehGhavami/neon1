@@ -27,10 +27,16 @@ const Products = () => {
           productName={product.productName}
           //sending count as props
           count={product.count}
+          onDelete={handelDelete}
+          id={product.id}
         />
       ))}
     </>
   );
+  function handelDelete(productId) {
+    const newProducts = products.filter((product) => product.id !== productId);
+    setProducts(newProducts);
+  }
 };
 
 export default Products;
