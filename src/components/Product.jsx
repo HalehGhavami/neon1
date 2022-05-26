@@ -4,12 +4,13 @@ import './product.css';
 export default class Product extends Component {
   //adding state attribute to change our stateless component to stateful component
   state = {
-    count: 5,
+    count: this.props.count,
   };
 
   //adding count attribute for be able using it anywhere in our class
 
   render() {
+    //props destructuring
     const { productName } = this.props;
     return (
       <div>
