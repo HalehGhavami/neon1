@@ -61,7 +61,7 @@ export default class Product extends Component {
   };
 
   handleDelete = () => {
-    console.log('Delete');
+    this.props.onDelete(this.props.id);
   };
 
   format() {
