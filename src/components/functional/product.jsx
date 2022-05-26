@@ -24,8 +24,8 @@ const Product = () => {
         Delete
       </button>
     </>
-    );
-    handleIncrement = () => {
+  );
+  function handleIncrement() {
     // const count = this.state.count;
 
     //object Destructuring
@@ -35,21 +35,21 @@ const Product = () => {
     this.setState({
       count: count + 1,
     });
-  };
+  }
 
-  handleDecrement = () => {
+  function handleDecrement() {
     const { count } = this.state;
 
     this.setState({
       count: count - 1,
     });
-  };
+  }
 
-  handleDelete = (itemNumber) => {
+  function handleDelete(itemNumber) {
     console.log(itemNumber);
-  };
+  }
 
-  format() {
+  function format() {
     if (this.state.count === 0) {
       return 'zero';
     } else {
