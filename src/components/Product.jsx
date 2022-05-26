@@ -10,9 +10,10 @@ export default class Product extends Component {
   //adding count attribute for be able using it anywhere in our class
 
   render() {
+    const { productName } = this.props;
     return (
       <div>
-        <span className="m-2 text-info">{this.props.productName}</span>
+        <span className="m-2 text-info">{productName}</span>
         <span className="m-2 badge bg-primary">{this.format()}</span>
         <button
           onClick={this.handleIncrement}
