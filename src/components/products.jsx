@@ -39,6 +39,9 @@ export default class Products extends Component {
     );
   }
   handelDelete = (productId) => {
-    console.log(productId);
+    const newProducts = this.state.products.filter(
+      (product) => product.id !== productId
+    );
+    this.setState({ products: newProducts });
   };
 }
