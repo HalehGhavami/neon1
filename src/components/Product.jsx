@@ -36,8 +36,6 @@ export default class Product extends Component {
         >
           Delete
         </button>
-        {/* passing children props  */}
-        {this.props.children}
       </div>
     );
   }
