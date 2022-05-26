@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-const Product = () => {
+const Product = (props) => {
   const [count, setCount] = useState(0);
   return (
     <div>
-      <span className="m-2 text-info">Product Name</span>
+      <span className="m-2 text-info">{props.productName}</span>
       <span className="m-2 badge bg-primary">{format()}</span>
       {/* handleIncrement function is defined out of scope */}
       <button onClick={handleIncrement} className="m-2 btn btn-sm btn-success">
