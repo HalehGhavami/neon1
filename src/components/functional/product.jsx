@@ -29,21 +29,14 @@ const Product = () => {
     </>
   );
   function handleIncrement() {
-    // const count = this.state.count;
-
-    //object Destructuring
-    const { count } = this.state;
-
-    //never change state directly !! use setState that is a method, inheritated from Component
-    this.setState({
+    //
+    this.setCount({
       count: count + 1,
     });
   }
 
   function handleDecrement() {
-    const { count } = this.state;
-
-    this.setState({
+    this.setCount({
       count: count - 1,
     });
   }
