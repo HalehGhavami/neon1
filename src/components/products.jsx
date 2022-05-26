@@ -31,7 +31,7 @@ export default class Products extends Component {
             //sending count as props
             count={product.count}
             //passing handelDelete method as props
-            onClick={this.handelDelete}
+            onDelete={this.handelDelete}
             id={product.id}
           />
         ))}
