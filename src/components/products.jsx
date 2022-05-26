@@ -24,6 +24,7 @@ export default class Products extends Component {
   render() {
     return (
       <>
+        <button className="btn btn-primary">Reset</button>
         {this.state.products.map((product, index) => (
           <Product
             key={index}
