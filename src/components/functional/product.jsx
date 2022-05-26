@@ -30,15 +30,11 @@ const Product = () => {
   );
   function handleIncrement() {
     //
-    this.setCount({
-      count: count + 1,
-    });
+    setCount(count + 1);
   }
 
   function handleDecrement() {
-    this.setCount({
-      count: count - 1,
-    });
+    setCount(count - 1);
   }
 
   function handleDelete(itemNumber) {
