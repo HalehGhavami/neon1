@@ -6,7 +6,13 @@ const Product = () => {
     <>
       <span className="m-2 text-info">Product Name</span>
       <span className="m-2 badge bg-primary">{format()}</span>
-      <button onClick={handleIncrement} className="m-2 btn btn-sm btn-success">
+      {/* handleIncrement function is defined out of scope */}
+      <button
+        onClick={() => {
+          handleIncrement(count, setCount);
+        }}
+        className="m-2 btn btn-sm btn-success"
+      >
         +
       </button>
       <button onClick={handleDecrement} className="m-2 btn btn-sm btn-warning">
@@ -22,10 +28,6 @@ const Product = () => {
       </button>
     </>
   );
-  function handleIncrement() {
-    //
-    setCount(count + 1);
-  }
 
   function handleDecrement() {
     setCount(count - 1);
@@ -43,5 +45,11 @@ const Product = () => {
     }
   }
 };
+
+//function out of scope
+function handleIncrement(count, setCount) {
+  //
+  setCount(count + 1);
+}
 
 export default Product;
