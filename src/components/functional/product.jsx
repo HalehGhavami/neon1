@@ -1,4 +1,7 @@
+import { useState } from 'react';
+
 const Product = () => {
+  const [count, setCount] = useState(0);
   return (
     <>
       <span className="m-2 text-info">Product Name</span>
