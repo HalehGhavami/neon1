@@ -30,7 +30,11 @@ export default class Products extends Component {
             productName={product.productName}
             //sending count as props
             count={product.count}
-          />
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra
+            accumsan in nisl nisi scelerisque.
+          </Product>
         ))}
       </>
     );
