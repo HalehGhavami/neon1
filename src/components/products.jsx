@@ -5,9 +5,9 @@ export default class Products extends Component {
   render() {
     return (
       <>
-        <Product />
-        <Product />
-        <Product />
+        <Product productName="laptop" />
+        <Product productName="mobile" />
+        <Product productName="airpod" />
       </>
     );
   }

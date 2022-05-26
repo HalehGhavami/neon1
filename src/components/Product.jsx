@@ -12,7 +12,7 @@ export default class Product extends Component {
   render() {
     return (
       <div>
-        <span className="m-2 text-info">Product Name</span>
+        <span className="m-2 text-info">{this.props.productName}</span>
         <span className="m-2 badge bg-primary">{this.format()}</span>
         <button
           onClick={this.handleIncrement}
