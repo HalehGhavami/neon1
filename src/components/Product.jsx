@@ -10,10 +10,6 @@ export default class Product extends Component {
   //adding count attribute for be able using it anywhere in our class
 
   render() {
-    // const count = 0;
-    const list = ['Item one ', 'Item two', 'Item three'];
-    //map method for converting an array of strings to an array of element
-    const listmap = list.map((item, index) => <li key={index}>{item}</li>);
     return (
       <>
         <span className="m-2 text-info">Product Name</span>
@@ -32,14 +28,12 @@ export default class Product extends Component {
         </button>
         <button
           onClick={() => {
-            this.handleDelete(55);
+            this.handleDelete();
           }}
           className="m-2 btn btn-sm btn-danger"
         >
           Delete
         </button>
-        <ul>{listmap}</ul>
-        <img src={this.state.imageUrl} alt="random foto" />
       </>
     );
   }
@@ -64,8 +58,8 @@ export default class Product extends Component {
     });
   };
 
-  handleDelete = (itemNumber) => {
-    console.log(itemNumber);
+  handleDelete = () => {
+    console.log('Delete');
   };
 
   format() {
