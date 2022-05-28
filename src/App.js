@@ -5,8 +5,9 @@ import ProductContext from './context/products';
 
 class App extends Component {
   //Mount phase
-  constructor() {
-    super();
+  //don't have access to props directly through constructor then we have to pass props
+  constructor(props) {
+    super(props);
     console.log('App - Constructor', this.props);
   }
 
