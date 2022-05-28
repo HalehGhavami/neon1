@@ -1,27 +1,21 @@
 import Product from './product';
+import { useContext } from 'react';
+import ProductContext from '../../context/products';
 
-const Products = ({
-  onReset,
-  onDelete,
-  onIncrement,
-  onDecrement,
-  products,
-}) => {
+const Products = (props) => {
+  const productContext = useContext(ProductContext);
   return (
     <>
-      <button className="btn btn-primary" onClick={onReset}>
+      <button className="btn btn-primary" onClick={productContext.onReset}>
         Reset
       </button>
-      {products.map((product, index) => (
+      {productContext.products.map((product, index) => (
         <Product
           key={index}
           productName={product.productName}
           //sending count as props
           count={product.count}
-          onDelete={onDelete}
           id={product.id}
-          onIncrement={onIncrement}
-          onDecrement={onDecrement}
         />
       ))}
     </>

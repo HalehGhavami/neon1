@@ -1,11 +1,9 @@
-const Product = ({
-  productName,
-  count,
-  onDelete,
-  id,
-  onIncrement,
-  onDecrement,
-}) => {
+import { useContext } from 'react';
+import ProductContext from '../../context/products';
+
+const Product = ({ productName, count, id }) => {
+  const productContext = useContext(ProductContext);
+
   return (
     <div>
       <span className="m-2 text-info">{productName}</span>
@@ -29,15 +27,15 @@ const Product = ({
   );
 
   function handleIncrement() {
-    onIncrement(id);
+    productContext.onIncrement(id);
   }
 
   function handleDecrement() {
-    onDecrement(id);
+    productContext.onDecrement(id);
   }
 
   function handleDelete() {
-    onDelete(id);
+    productContext.onDelete(id);
   }
 
   function format() {
