@@ -24,9 +24,7 @@ export default class Product extends Component {
           -
         </button>
         <button
-          onClick={() => {
-            this.handleDelete();
-          }}
+          onClick={this.handleDelete}
           className="m-2 btn btn-sm btn-danger"
         >
           Delete
@@ -36,23 +34,11 @@ export default class Product extends Component {
   }
 
   handleIncrement = () => {
-    // const count = this.state.count;
-
-    //object Destructuring
-    const { count } = this.state;
-
-    //never change state directly !! use setState that is a method, inheritated from Component
-    this.setState({
-      count: count + 1,
-    });
+    this.props.onIncerement(this.props.id);
   };
 
   handleDecrement = () => {
-    const { count } = this.state;
-
-    this.setState({
-      count: count - 1,
-    });
+    this.props.onDecrement(this.props.id);
   };
 
   handleDelete = () => {
