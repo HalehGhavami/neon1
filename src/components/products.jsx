@@ -63,7 +63,7 @@ export default class Products extends Component {
     //make a copy of our products
     const newProducts = [...this.state.products];
     //search in newProducts array to find the index of selected productId
-    const index = newProducts.indexOf((product) => product.id === productId);
+    const index = newProducts.findIndex((product) => product.id === productId);
     newProducts[index].count += 1;
     this.setState({ products: newProducts });
   };
@@ -72,7 +72,7 @@ export default class Products extends Component {
     //make a copy of our products
     const newProducts = [...this.state.products];
     //search in newProducts array to find the index of selected productId
-    const index = newProducts.indexOf((product) => product.id === productId);
+    const index = newProducts.findIndex((product) => product.id === productId);
     newProducts[index].count -= 1;
     this.setState({ products: newProducts });
   };
