@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Navbar from './components/navbar';
 import Products from './components/products';
+import ProductContext from './context/products';
 
 class App extends Component {
   state = {
@@ -25,16 +26,16 @@ class App extends Component {
   render() {
     return (
       <>
-        {/* share state between 2 sibling component is not possible */}
-        {/* passing states as props to 2 siblings component */}
-        <Navbar products={this.state.products} />
-        <Products
+        <ProductContext.Provider
           products={this.state.products}
           onDelete={this.handelDelete}
           onIncrement={this.handelIncrement}
           onDecrement={this.handelDecrement}
           onReset={this.handleReset}
-        />
+        >
+          <Navbar />
+          <Products />
+        </ProductContext.Provider>
       </>
     );
   }
