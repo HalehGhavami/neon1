@@ -36,6 +36,9 @@ export default class Products extends Component {
             //passing handelDelete method as props
             onDelete={this.handelDelete}
             id={product.id}
+            //passing methods as props
+            onIncerement={this.handelIncrement}
+            onDecrement={this.handelDecrement}
           />
         ))}
       </>
