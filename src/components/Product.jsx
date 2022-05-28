@@ -2,7 +2,8 @@ import { Component } from 'react';
 import './product.css';
 
 export default class Product extends Component {
-  //adding state attribute to change our stateless component to stateful component
+  // state here remain unchange after clinking reset button and just count in props became 0! =>
+  //  we have to move all related to products in one place(here Products)
   state = {
     count: this.props.count,
   };
