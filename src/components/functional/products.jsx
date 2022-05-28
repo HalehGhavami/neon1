@@ -21,6 +21,9 @@ const Products = () => {
   ]);
   return (
     <>
+      <button className="btn btn-primary" onClick={handleReset}>
+        Reset
+      </button>
       {products.map((product, index) => (
         <Product
           key={index}
@@ -29,12 +32,40 @@ const Products = () => {
           count={product.count}
           onDelete={handelDelete}
           id={product.id}
+          onIncrement={handelIncrement}
+          onDecrement={handelDecrement}
         />
       ))}
     </>
   );
   function handelDelete(productId) {
     const newProducts = products.filter((product) => product.id !== productId);
+    setProducts(newProducts);
+  }
+
+  function handleReset() {
+    const newProducts = products.map((product) => {
+      product.count = 0;
+      return product;
+    });
+    setProducts(newProducts);
+  }
+
+  function handelIncrement(productId) {
+    //make a copy of our products
+    const newProducts = [...products];
+    //search in newProducts array to find the index of selected productId
+    const index = newProducts.findIndex((product) => product.id === productId);
+    newProducts[index].count += 1;
+    setProducts(newProducts);
+  }
+
+  function handelDecrement(productId) {
+    //make a copy of our products
+    const newProducts = [...products];
+    //search in newProducts array to find the index of selected productId
+    const index = newProducts.findIndex((product) => product.id === productId);
+    newProducts[index].count -= 1;
     setProducts(newProducts);
   }
 };

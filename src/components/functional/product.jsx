@@ -1,7 +1,11 @@
-import { useState } from 'react';
-
-const Product = ({ productName, count: propCount, onDelete, id }) => {
-  const [count, setCount] = useState(propCount);
+const Product = ({
+  productName,
+  count,
+  onDelete,
+  id,
+  onIncrement,
+  onDecrement,
+}) => {
   return (
     <div>
       <span className="m-2 text-info">{productName}</span>
@@ -25,11 +29,11 @@ const Product = ({ productName, count: propCount, onDelete, id }) => {
   );
 
   function handleIncrement() {
-    setCount(count + 1);
+    onIncrement(id);
   }
 
   function handleDecrement() {
-    setCount(count - 1);
+    onDecrement(id);
   }
 
   function handleDelete() {
