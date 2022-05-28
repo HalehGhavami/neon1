@@ -5,6 +5,7 @@ class Navbar extends Component {
   //activated this.context
   static contextType = ProductContext;
   render() {
+    console.log('navbar - render');
     return (
       <nav className="navbar navbar-light bg-light">
         <div className="container-fluid">

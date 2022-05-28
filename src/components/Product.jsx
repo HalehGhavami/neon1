@@ -5,6 +5,7 @@ import ProductContext from '../context/products';
 export default class Product extends Component {
   static contextType = ProductContext;
   render() {
+    console.log('Product - render');
     //props destructuring
     const { productName } = this.props;
     return (

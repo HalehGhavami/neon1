@@ -5,6 +5,7 @@ import ProductContext from '../context/products';
 export default class Products extends Component {
   static contextType = ProductContext;
   render() {
+    console.log('products - render');
     return (
       <>
         <button className="btn btn-primary" onClick={this.context.onReset}>

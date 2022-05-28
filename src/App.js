@@ -15,9 +15,6 @@ class App extends Component {
   // 3rd phase : our component is in DOM tree => is good to use for ajax and http request to server
   componentDidMount() {
     console.log('App - DidMount');
-    //example
-    result = axios.get(getProductApi);
-    this.setState({ products: result });
   }
 
   state = {
@@ -41,6 +38,7 @@ class App extends Component {
   };
 
   //2nd phase => from here we can use setSate
+  //when render is called all its inside children will return too
   render() {
     console.log('App - render');
     return (
