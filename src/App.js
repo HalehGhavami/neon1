@@ -25,21 +25,21 @@ class App extends Component {
   };
   render() {
     return (
-      <>
-        <ProductContext.Provider
-          products={this.state.products}
-          onDelete={this.handelDelete}
-          onIncrement={this.handelIncrement}
-          onDecrement={this.handelDecrement}
-          onReset={this.handleReset}
-        >
-          <Navbar />
-          <Products />
-        </ProductContext.Provider>
-      </>
+      <ProductContext.Provider
+        value={{
+          products: this.state.products,
+          onDelete: this.handleDelete,
+          onIncrement: this.handleIncrement,
+          onDecrement: this.handleDecrement,
+          onReset: this.handleReset,
+        }}
+      >
+        <Navbar />
+        <Products />
+      </ProductContext.Provider>
     );
   }
-  handelDelete = (productId) => {
+  handleDelete = (productId) => {
     const newProducts = this.state.products.filter(
       (product) => product.id !== productId
     );
@@ -54,7 +54,7 @@ class App extends Component {
     this.setState({ products: newProducts });
   };
 
-  handelIncrement = (productId) => {
+  handleIncrement = (productId) => {
     //make a copy of our products
     const newProducts = [...this.state.products];
     //search in newProducts array to find the index of selected productId
@@ -63,7 +63,7 @@ class App extends Component {
     this.setState({ products: newProducts });
   };
 
-  handelDecrement = (productId) => {
+  handleDecrement = (productId) => {
     //make a copy of our products
     const newProducts = [...this.state.products];
     //search in newProducts array to find the index of selected productId

@@ -1,9 +1,9 @@
 import { Component } from 'react';
 import './product.css';
+import ProductContext from '../context/products';
 
 export default class Product extends Component {
-  //Delete count state here and receive it as props instead
-
+  static contextType = ProductContext;
   render() {
     //props destructuring
     const { productName } = this.props;
@@ -34,15 +34,15 @@ export default class Product extends Component {
   }
 
   handleIncrement = () => {
-    this.props.onIncerement(this.props.id);
+    this.context.onIncrement(this.props.id);
   };
 
   handleDecrement = () => {
-    this.props.onDecrement(this.props.id);
+    this.context.onDecrement(this.props.id);
   };
 
   handleDelete = () => {
-    this.props.onDelete(this.props.id);
+    this.context.onDelete(this.props.id);
   };
 
   //receiving count through props instead of state in this component

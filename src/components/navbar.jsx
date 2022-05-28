@@ -18,7 +18,7 @@ class Navbar extends Component {
   calculateSum = () => {
     let sum = 0;
     //can use radius method or forEach
-    this.props.products.forEach((product) => {
+    this.context.products.forEach((product) => {
       sum += product.count;
     });
     return sum;
