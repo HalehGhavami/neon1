@@ -6,14 +6,18 @@ import ProductContext from './context/products';
 class App extends Component {
   //Mount phase
   //don't have access to props directly through constructor then we have to pass props
+  //constructor calls just 1 time !! we can not call setSate here because setSate will call after we called render
   constructor(props) {
     super(props);
     console.log('App - Constructor');
-    this.state = { products: this.props.products };
   }
 
+  // 3rd phase : our component is in DOM tree => is good to use for ajax and http request to server
   componentDidMount() {
     console.log('App - DidMount');
+    //example
+    result = axios.get(getProductApi);
+    this.setState({ products: result });
   }
 
   state = {
@@ -35,6 +39,8 @@ class App extends Component {
       },
     ],
   };
+
+  //2nd phase => from here we can use setSate
   render() {
     console.log('App - render');
     return (
