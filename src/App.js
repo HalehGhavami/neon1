@@ -11,6 +11,10 @@ class App extends Component {
     console.log('App - Constructor');
   }
 
+  componentDidMount() {
+    console.log('App - DidMount');
+  }
+
   state = {
     products: [
       {
