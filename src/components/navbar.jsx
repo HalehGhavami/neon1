@@ -1,6 +1,9 @@
 import { Component } from 'react';
+import ProductContext from '../context/products';
 
 class Navbar extends Component {
+  //activated this.context
+  static contextType = ProductContext;
   render() {
     return (
       <nav className="navbar navbar-light bg-light">
