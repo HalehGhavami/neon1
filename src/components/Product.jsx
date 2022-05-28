@@ -2,13 +2,7 @@ import { Component } from 'react';
 import './product.css';
 
 export default class Product extends Component {
-  // state here remain unchange after clinking reset button and just count in props became 0! =>
-  //  we have to move all related to products in one place(here Products)
-  state = {
-    count: this.props.count,
-  };
-
-  //adding count attribute for be able using it anywhere in our class
+  //Delete count state here and receive it as props instead
 
   render() {
     //props destructuring
@@ -65,11 +59,12 @@ export default class Product extends Component {
     this.props.onDelete(this.props.id);
   };
 
+  //receiving count through props instead of state in this component
   format() {
-    if (this.state.count === 0) {
+    if (this.props.count === 0) {
       return 'zero';
     } else {
-      return this.state.count;
+      return this.props.count;
     }
   }
 }
