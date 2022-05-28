@@ -8,7 +8,7 @@ class App extends Component {
   //don't have access to props directly through constructor then we have to pass props
   constructor(props) {
     super(props);
-    console.log('App - Constructor', this.props);
+    console.log('App - Constructor');
   }
 
   state = {
@@ -31,6 +31,7 @@ class App extends Component {
     ],
   };
   render() {
+    console.log('App - render');
     return (
       <ProductContext.Provider
         value={{
