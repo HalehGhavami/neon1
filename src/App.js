@@ -4,6 +4,12 @@ import Products from './components/products';
 import ProductContext from './context/products';
 
 class App extends Component {
+  //Mount phase
+  constructor() {
+    super();
+    console.log('App - Constructor', this.props);
+  }
+
   state = {
     products: [
       {
