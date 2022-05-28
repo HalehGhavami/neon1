@@ -1,11 +1,13 @@
 import { Component } from 'react';
+import Navbar from './components/navbar';
+import Products from './components/products';
 
 class App extends Component {
   render() {
     return (
       <>
-        <h1>Hello World!</h1>
-        <p>I am </p>
+        <Navbar />
+        <Products />
       </>
     );
   }
