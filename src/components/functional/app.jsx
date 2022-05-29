@@ -26,8 +26,8 @@ const App = () => {
 
   //will call just in mount phase
   useEffect(() => {
-    console.log('App', []);
-  });
+    console.log('App');
+  }, []);
 
   //will call just in update phase
   useEffect(() => {
