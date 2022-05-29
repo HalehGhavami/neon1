@@ -1,6 +1,6 @@
 import Products from './products';
 import Navbar from './navbar';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ProductContext from '../../context/products';
 
 const App = () => {
@@ -21,6 +21,16 @@ const App = () => {
       productName: 'airpod',
     },
   ]);
+  //will call in both mount and update phase
+  useEffect(() => {
+    console.log('App');
+  });
+
+  // //will call just in mount phase
+  // useEffect(() => {
+  //   console.log('App', []);
+  // });
+
   return (
     <>
       <ProductContext.Provider
