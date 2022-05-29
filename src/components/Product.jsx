@@ -7,6 +7,10 @@ export default class Product extends Component {
   componentDidUpdate() {
     console.log('Product - didUpdate');
   }
+
+  componentWillUnmount() {
+    console.log('Product - willUnmount');
+  }
   render() {
     console.log('Product - render');
     //props destructuring
