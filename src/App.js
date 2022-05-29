@@ -4,19 +4,10 @@ import Products from './components/products';
 import ProductContext from './context/products';
 
 class App extends Component {
-  //Mount phase
-  //don't have access to props directly through constructor then we have to pass props
-  //constructor calls just 1 time !! we can not call setSate here because setSate will call after we called render
-  constructor(props) {
-    super(props);
-    console.log('App - Constructor');
+  //Update phase
+  componentDidUpdate() {
+    console.log('App - didUpdate');
   }
-
-  // 3rd phase : our component is in DOM tree => is good to use for ajax and http request to server
-  componentDidMount() {
-    console.log('App - DidMount');
-  }
-
   state = {
     products: [
       {

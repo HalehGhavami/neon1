@@ -4,14 +4,8 @@ import ProductContext from '../context/products';
 class Navbar extends Component {
   //activated this.context
   static contextType = ProductContext;
-
-  constructor(props) {
-    super();
-    console.log('Navbar - constructor');
-  }
-
-  componentDidMount() {
-    console.log('Navbar - didMount');
+  componentDidUpdate() {
+    console.log('Navbar - didUpdate');
   }
   render() {
     console.log('Navbar - render');
