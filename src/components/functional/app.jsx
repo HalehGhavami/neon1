@@ -21,14 +21,17 @@ const App = () => {
       productName: 'airpod',
     },
   ]);
-  // //will call in both mount and update phase
-  // useEffect(() => {
-  //   console.log('App');
-  // });
+
+  // we can have multiple useEffect
 
   //will call just in mount phase
   useEffect(() => {
     console.log('App', []);
+  });
+
+  //will call just in update phase
+  useEffect(() => {
+    console.log('App2');
   });
 
   return (
