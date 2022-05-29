@@ -4,10 +4,6 @@ import Products from './components/products';
 import ProductContext from './context/products';
 
 class App extends Component {
-  //Update phase
-  componentDidUpdate() {
-    console.log('App - didUpdate');
-  }
   state = {
     products: [
       {
@@ -31,7 +27,6 @@ class App extends Component {
   //2nd phase => from here we can use setSate
   //when render is called all its inside children will return too
   render() {
-    console.log('App - render');
     return (
       <ProductContext.Provider
         value={{

@@ -4,11 +4,8 @@ import ProductContext from '../context/products';
 
 export default class Products extends Component {
   static contextType = ProductContext;
-  componentDidUpdate() {
-    console.log('Products - didUpdate');
-  }
+
   render() {
-    console.log('products - render');
     return (
       <>
         <button className="btn btn-primary" onClick={this.context.onReset}>
