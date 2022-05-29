@@ -4,6 +4,15 @@ import ProductContext from '../context/products';
 
 export default class Product extends Component {
   static contextType = ProductContext;
+  constructor(props) {
+    super(props);
+    console.log('Product - constructor');
+  }
+
+  componentDidMount() {
+    console.log('Product - didMount');
+  }
+
   render() {
     console.log('Product - render');
     //props destructuring

@@ -4,6 +4,14 @@ import ProductContext from '../context/products';
 
 export default class Products extends Component {
   static contextType = ProductContext;
+
+  constructor(props) {
+    super(props);
+    console.log('Products - constructor');
+  }
+  componentDidMount() {
+    console.log('Products - didMount');
+  }
   render() {
     console.log('products - render');
     return (
