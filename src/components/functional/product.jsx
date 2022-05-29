@@ -1,15 +1,9 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import ProductContext from '../../context/products';
 
 const Product = ({ productName, count, id }) => {
   const productContext = useContext(ProductContext);
 
-  //useEffect that return a funcation is used for unMount phase
-  useEffect(() => {
-    return () => {
-      console.log('Product - unMount');
-    };
-  }, []);
   return (
     <div>
       <span className="m-2 text-info">{productName}</span>

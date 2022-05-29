@@ -1,6 +1,6 @@
 import Products from './products';
 import Navbar from './navbar';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import ProductContext from '../../context/products';
 
 const App = () => {
@@ -21,18 +21,6 @@ const App = () => {
       productName: 'airpod',
     },
   ]);
-
-  // we can have multiple useEffect
-
-  //will call just in mount phase
-  useEffect(() => {
-    console.log('App');
-  }, []);
-
-  //will call just in update phase
-  useEffect(() => {
-    console.log('App2');
-  });
 
   return (
     <>
